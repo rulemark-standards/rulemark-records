@@ -4,31 +4,21 @@
 Purpose:
 One-shot addition of a Canonical PDF and synchronized index update.
 
-Execution Rules:
+Rules:
+- Use the original PDF filename automatically
 - Do not ask questions
 - Do not split steps
-- No human intervention
-- Execute once, end
+- Execute once
 
-Tasks:
-
-1. Add the following file to the repository root as a Canonical Record:
-   【PDF文件名.pdf】
-
-2. Do not rename, modify, or replace any existing PDF.
-
-3. Commit the addition with the exact message:
-   Add Canonical Record: 【PDF文件名】 (YYYY-MM-DD)
-
-4. Read index.html and regenerate a complete version,
-   without changing structure, styles, or scripts,
-   listing the new PDF under Records / Standards.
-
-5. Overwrite index.html entirely (no line insertion).
-
-6. Commit the index update with the exact message:
-   Index: list 【PDF文件名】
-
+Procedure:
+1. Detect newly added PDF(s) in repository root.
+2. Add them as Canonical Records without renaming.
+3. Commit with message:
+   Add Canonical Record: <PDF filename> (YYYY-MM-DD)
+4. Regenerate a complete index.html listing all PDFs.
+5. Overwrite index.html entirely.
+6. Commit with message:
+   Index: sync canonical records
 7. Push to main branch.
 ---
 
